@@ -47,3 +47,9 @@ $ gcloud init
 ```bash
 $ gcloud auth application-default login
 ```
+
+Add credentials file path to environment variable
+
+```bash
+$ export GOOGLE_APPLICATION_CREDENTIALS=<path for credentials file>
+```
