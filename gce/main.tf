@@ -33,6 +33,7 @@ provider "google" {
 }
 
 # GCE VM instance
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started#provisioning-your-resources
 resource "google_compute_instance" "vm_instance" {
     name         = "terraform-instance"
     machine_type = "e2-micro"
