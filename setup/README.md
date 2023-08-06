@@ -39,3 +39,11 @@ Initialize the gcloud CLI.
 ```bash
 $ gcloud init
 ```
+
+### Application Default Credentials (ADC)
+
+[Google Cloud Compute EngineをTerraformで構築してみる](https://dev.classmethod.jp/articles/google-cloud-advent-calendar-2021-18-terraform/)
+
+```bash
+$ gcloud auth application-default login
+```
