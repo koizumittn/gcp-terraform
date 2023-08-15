@@ -1,0 +1,10 @@
+# terraform
+terraform*
+.terraform*
+
+# nodejs modules
+**/node_modules/**
+npm-debug.log
+
+# zip file
+*.zip
