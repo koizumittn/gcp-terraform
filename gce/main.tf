@@ -8,23 +8,6 @@ terraform {
     }
 }
 
-# variable
-variable "google_cloud_project" {
-    type = string
-}
-
-variable "google_cloud_credentials_file" {
-    type = string
-}
-
-variable "google_cloud_region" {
-    type = string
-}
-
-variable "google_cloud_zone" {
-    type = string
-}
-
 # provider setting
 provider "google" {
     project = var.google_cloud_project

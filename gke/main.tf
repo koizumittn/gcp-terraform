@@ -15,24 +15,6 @@ provider "google" {
   zone    = var.google_cloud_zone
 }
 
-# variable
-# https://developer.hashicorp.com/terraform/language/values/variables#environment-variables
-variable "google_cloud_project" {
-  type = string
-}
-
-variable "google_cloud_credentials_file" {
-  type = string
-}
-
-variable "google_cloud_region" {
-  type = string
-}
-
-variable "google_cloud_zone" {
-  type = string
-}
-
 # google_container_cluster
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster
 resource "google_service_account" "default" {
