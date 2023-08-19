@@ -10,7 +10,7 @@ terraform {
 
 # provider setting
 provider "google" {
-  project = var.google_cloud_project
+  project = var.google_cloud_project_id
   region  = var.google_cloud_region
   zone    = var.google_cloud_zone
 }

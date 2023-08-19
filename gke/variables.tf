@@ -1,7 +1,7 @@
 # See:
 # https://developer.hashicorp.com/terraform/language/values/variables#environment-variables
 
-variable "google_cloud_project" {
+variable "google_cloud_project_id" {
   type = string
 }
 
