@@ -1,6 +1,6 @@
 # GCE VM instance
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started#provisioning-your-resources
-resource "google_compute_instance" "test-vm" {
+resource "google_compute_instance" "test" {
   name         = "terraform-instance"
   machine_type = "e2-micro"
 
@@ -19,14 +19,14 @@ resource "google_compute_instance" "test-vm" {
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = google_service_account.test-vm-sa.email
+    email  = google_service_account.test.email
     scopes = ["cloud-platform"]
   }
 }
 
 # Service Account
 # See: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
-resource "google_service_account" "test-vm-sa" {
+resource "google_service_account" "test" {
   account_id   = "test-vm-sa"
   display_name = "Service Account for Test VM"
 }

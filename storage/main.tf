@@ -21,7 +21,7 @@ provider "google" {
 
 # Bucket
 # See: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket
-resource "google_storage_bucket" "my-bucket" {
+resource "google_storage_bucket" "my_bucket" {
   name          = "${var.google_cloud_project_id}-tf-bucket"
   location      = var.google_cloud_region
   force_destroy = true
@@ -29,19 +29,19 @@ resource "google_storage_bucket" "my-bucket" {
 
 # Bucket Object
 # See: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_object
-resource "google_storage_bucket_object" "sample-object" {
+resource "google_storage_bucket_object" "sample_object" {
   name   = "sample.txt"
   source = "./sample.txt"
-  bucket = google_storage_bucket.my-bucket.name
+  bucket = google_storage_bucket.my_bucket.name
 }
 
 # google_storage_bucket_iam_binding
 # See: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_iam#google_storage_bucket_iam_binding
 resource "google_storage_bucket_iam_binding" "binding" {
-  bucket = google_storage_bucket.my-bucket.name
+  bucket = google_storage_bucket.my_bucket.name
   role = "roles/storage.objectViewer" # only read access
   # role = "roles/storage.admin" # full access
   members = [
-    "serviceAccount:${google_service_account.test-vm-sa.email}",
+    "serviceAccount:${google_service_account.test.email}",
   ]
 }
