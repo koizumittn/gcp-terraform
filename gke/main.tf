@@ -10,9 +10,9 @@ terraform {
 
 # provider setting
 provider "google" {
-  project = var.google_cloud_project_id
-  region  = var.google_cloud_region
-  zone    = var.google_cloud_zone
+  project = var.project_id
+  region  = var.region
+  zone    = var.zone
 }
 
 # google_container_cluster
@@ -24,7 +24,7 @@ resource "google_service_account" "default" {
 
 resource "google_container_cluster" "primary" {
   name     = "my-gke-cluster"
-  location = var.google_cloud_region
+  location = var.region
 
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
@@ -35,7 +35,7 @@ resource "google_container_cluster" "primary" {
 
 resource "google_container_node_pool" "primary_preemptible_nodes" {
   name       = "my-node-pool"
-  location   = var.google_cloud_region
+  location   = var.region
   cluster    = google_container_cluster.primary.name
   node_count = 1
 

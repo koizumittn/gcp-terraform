@@ -1,18 +1,18 @@
 # See:
 # https://developer.hashicorp.com/terraform/language/values/variables#environment-variables
 
-variable "google_cloud_credentials_file" {
+variable "credentials_file" {
   type = string
 }
 
-variable "google_cloud_region" {
+variable "region" {
   type = string
 }
 
-variable "google_cloud_zone" {
+variable "zone" {
   type = string
 }
 
-variable "google_cloud_project_id" {
+variable "project_id" {
   type = string
 }

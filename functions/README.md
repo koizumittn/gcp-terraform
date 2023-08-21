@@ -8,10 +8,10 @@ See:
 - Set the following environment variables:
 
 ```
-export TF_VAR_google_cloud_project=[PROJECT_ID]
-export TF_VAR_google_cloud_credentials_file="./path/to/credentials/file"
-export TF_VAR_google_cloud_region=[REGION]
-export TF_VAR_google_cloud_zone=[ZONE]
+export TF_VAR_project_id=[PROJECT_ID]
+export TF_VAR_credentials_file="./path/to/credentials/file"
+export TF_VAR_region=[REGION]
+export TF_VAR_zone=[ZONE]
 ```
 
 - Create zip file contains code:

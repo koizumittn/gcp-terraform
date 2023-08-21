@@ -10,16 +10,16 @@ terraform {
 
 # provider setting
 provider "google" {
-  project = var.google_cloud_project_id
-  region  = var.google_cloud_region
-  zone    = var.google_cloud_zone
+  project = var.project_id
+  region  = var.region
+  zone    = var.zone
 }
 
 # Cloud Run
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_run_service#example-usage---cloud-run-service-basic
 resource "google_cloud_run_service" "hello_world" {
   name     = "cloudrun-terraform-hello-world-web-app"
-  location = var.google_cloud_region
+  location = var.region
 
   template {
     spec {

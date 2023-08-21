@@ -10,15 +10,15 @@ terraform {
 
 # provider setting
 provider "google" {
-  region = var.google_cloud_region
-  zone   = var.google_cloud_zone
+  region = var.region
+  zone   = var.zone
 }
 
 # Google Cloud Project
 # See: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_project
 resource "google_project" "my_terraform_project" {
   name            = "My Terraform Project"
-  project_id      = var.google_cloud_project_id
+  project_id      = var.project_id
   billing_account = var.billing_account
 }
 
@@ -33,5 +33,7 @@ module "project-services" {
   activate_apis = [
     "compute.googleapis.com",
     "iam.googleapis.com",
+    "cloudfunctions.googleapis.com",
+    "cloudbuild.googleapis.com",
   ]
 }

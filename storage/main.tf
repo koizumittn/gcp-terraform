@@ -10,9 +10,9 @@ terraform {
 
 # provider setting
 provider "google" {
-  project = var.google_cloud_project_id
-  region  = var.google_cloud_region
-  zone    = var.google_cloud_zone
+  project = var.project_id
+  region  = var.region
+  zone    = var.zone
 }
 
 /*****************************
@@ -22,8 +22,8 @@ provider "google" {
 # Bucket
 # See: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket
 resource "google_storage_bucket" "my_bucket" {
-  name          = "${var.google_cloud_project_id}-tf-bucket"
-  location      = var.google_cloud_region
+  name          = "${var.project_id}-tf-bucket"
+  location      = var.region
   force_destroy = true
 }
 

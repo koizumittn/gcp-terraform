@@ -10,9 +10,9 @@ terraform {
 
 # provider setting
 provider "google" {
-    project = var.google_cloud_project_id
-    region  = var.google_cloud_region
-    zone = var.google_cloud_zone
+    project = var.project_id
+    region  = var.region
+    zone = var.zone
 }
 
 # GCE VM instance
